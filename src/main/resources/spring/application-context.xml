@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:cxfcore="http://cxf.apache.org/core"
+
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+		http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+    <!-- Can define the camel context here. It's merged with all the RouteBuilders and camel/*.xml,camel-rest/*.xml
+         camel.springboot.* properties are ignored if this is used
+     -->
+
+    <!-- CXF -->
+    <cxf:cxfEndpoint
+            id="cxfEmployeeService"
+            address="${employeeService.url}"
+            serviceClass="com.brijeshpant.soap.gen.Port">
+        <cxf:features>
+            <bean class="org.apache.cxf.feature.LoggingFeature"/> <!-- Logs in/out message at INFO level -->
+        </cxf:features>
+    </cxf:cxfEndpoint>
+
+
+
+</beans>
