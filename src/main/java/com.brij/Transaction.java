@@ -1,6 +1,6 @@
 package com.brij;
 
-public class Person {
+public class Transaction {
 
 
     public String getFirstName() {

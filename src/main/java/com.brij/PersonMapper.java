@@ -16,5 +16,5 @@ public interface PersonMapper {
             @Mapping(target = "empId", source = "entity.id"),
             @Mapping(target = "email", source = "entity.emailId")
     })
-    Employee personToPersonDTO(Person entity);
+    Employee personToPersonDTO(Transaction entity);
 }
